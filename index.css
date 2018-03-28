@@ -52,3 +52,27 @@ footer.footer-bottom {
   background-color: rgba(255,255,255,0.1);
   margin: auto;
 }
+
+div.container {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 10px;
+}
+
+li p{
+  font-size: 20px;
+  font-family: futura;
+  color: #bada55;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+}
+
+div.brand p{
+  font-family: Luminari, fantasy;
+  line-height: 70px;
+}
+
+nav div.item {
+  background: blue;
+}
