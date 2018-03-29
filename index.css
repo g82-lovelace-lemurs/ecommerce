@@ -55,7 +55,7 @@ footer.footer-top .col {
   display: inline-block;
   min-width: 250px;
   margin: 30px 10px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.00);
 }
 
 footer.footer-top h1 {
@@ -113,7 +113,7 @@ footer.footer-bottom .bottom-left, footer.footer-bottom .bottom-right {
   display: inline-block;
   margin: 0px 10px;
   line-height: 5vh;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.00);
 }
 
 footer.footer-bottom p {
