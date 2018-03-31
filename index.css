@@ -53,26 +53,19 @@ footer.footer-bottom {
   margin: auto;
 }
 
-div.container {
-  display: flex;
-  flex-wrap: nowrap;
-  font-size: 10px;
-}
-
-li p{
+.nav-pills li a{
   font-size: 20px;
   font-family: futura;
   color: #bada55;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-}
-
-div.brand p{
-  font-family: Luminari, fantasy;
+  max-width: 100%;
   line-height: 70px;
+  margin-right: 16px;
 }
 
-nav div.item {
-  background: blue;
+nav {
+    z-index: 98;
+}
+
+.navSpace {
+  margin-left: ;
 }
