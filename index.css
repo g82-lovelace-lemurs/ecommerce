@@ -1,7 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-size: 0px;
+  /* font-size: 0px; */
 }
 
 body {
@@ -20,6 +20,7 @@ nav {
   height: 70px;
   position: sticky;
   top: 0px;
+  font-size: 16px;
 }
 
 div.carousel {
@@ -53,19 +54,57 @@ footer.footer-bottom {
   margin: auto;
 }
 
-.nav-pills li a{
-  font-size: 20px;
-  font-family: futura;
-  color: #bada55;
-  max-width: 100%;
-  line-height: 70px;
-  margin-right: 16px;
-}
-
 nav {
     z-index: 98;
+    width: 1200px
+    margin: auto;
 }
 
-.navSpace {
-  margin-left: ;
+.navbar-brand {
+  font-family:  Herculanum;
+  font-size: 30px;
+}
+
+#cartIcon {
+  margin-right: 6px;
+}
+
+ul.dropdown-cart{
+    min-width:250px;
+}
+ul.dropdown-cart li .item{
+    display:block;
+    padding:3px 10px;
+    margin: 3px 0;
+}
+ul.dropdown-cart li .item:hover{
+    background-color:#f3f3f3;
+}
+ul.dropdown-cart li .item:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+ul.dropdown-cart li .item-left{
+    float:left;
+}
+ul.dropdown-cart li .item-left img,
+ul.dropdown-cart li .item-left span.item-info{
+    float:left;
+}
+ul.dropdown-cart li .item-left span.item-info{
+    margin-left:10px;
+}
+ul.dropdown-cart li .item-left span.item-info span{
+    display:block;
+}
+ul.dropdown-cart li .item-right{
+    float:right;
+}
+ul.dropdown-cart li .item-right button{
+    margin-top:14px;
 }
