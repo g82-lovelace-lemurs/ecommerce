@@ -146,7 +146,7 @@ nav {
 }
 
 .nav-link {
-  font-size: 14px;
+  font-size: 15px;
   margin-left: 12px;
 }
 
@@ -156,7 +156,7 @@ nav {
 }
 
 #cartIcon {
-  margin-right: 6px;
+  margin-right: 26px;
 }
 
 ul.dropdown-cart{
@@ -166,6 +166,7 @@ ul.dropdown-cart li .item{
     display:block;
     padding:3px 10px;
     margin: 3px 0;
+    font-size: 16px;
 }
 ul.dropdown-cart li .item:hover{
     background-color:#f3f3f3;
