@@ -194,8 +194,13 @@ footer.footer-bottom li {
 
 nav {
     z-index: 98;
-    width: 1200px;
+    width: 100vw;
     margin: auto;
+}
+
+nav .nav-container {
+  width: 1200px;
+  margin: auto;
 }
 
 .nav-link {
@@ -206,6 +211,7 @@ nav {
 .navbar-brand {
   font-family:  Herculanum;
   font-size: 30px;
+  display: inline
 }
 
 #cartIcon {
