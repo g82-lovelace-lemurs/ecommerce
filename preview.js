@@ -119,7 +119,7 @@ class Preview {
         return this._data_obj;
     }
 
-    set data_obj({id = null, name = null, product_name = null, type = null, preview_img = null, price = null, rating = null, reviews = null} = 
+    set data_obj({id = null, name = null, product_name = null, type = null, preview_img = null, price = null, rating = null, reviews = null} =
         {id : "0", name : null, product_name : null, type : null, preview_img : null, price: "0.0", rating : "0.0", reviews : "0"}) {
         this._data_obj = {id, name, product_name, type, preview_img, price, rating, reviews};
     }
@@ -129,40 +129,40 @@ class Preview {
         div.classList.add('product-preview');
         div.setAttribute("onclick", "openProduct()");
         block.appendChild(div);
-        
+
         this.creatPreviewImg(div); //////?????
-    
+
         const info = document.createElement('div');
         info.style.width = "85%";
-        info.style.margin = "auto"; 
+        info.style.margin = "auto";
         div.appendChild(info);
-    
+
         /// span with name of product
         if (this.data_obj.type === "product") {
             Preview.createRegTextLine(this.data_obj.product_name, info);
-    
+
             const br = document.createElement('br');
             info.appendChild(br);
         }
-    
+
         /// span with name of artist
         Preview.createRegTextLine(this.data_obj.name, info);
-    
+
         const br1 = document.createElement('br');
         info.appendChild(br1);
-    
+
         /// span with price
         if (this.data_obj.type === "product")
             Preview.createRegTextLine(`$ ${this.data_obj.price}`, info);
-            
-        
+
+
         /// div with rating and reviews
         const div1 = document.createElement('div');
         div1.style.width = "100%";
         div1.style.minHeight = "10px";
         div1.classList.add('unit');
         info.appendChild(div1);
-    
+
         Preview.createRegTextLine(this.data_obj.rating, div1);
         Preview.createRegTextLine(`${this.data_obj.reviews.length} reviews`, div1);
     }
@@ -172,13 +172,13 @@ class Preview {
         const div = document.createElement('div');
         div.classList.add('img-box');
         parent.appendChild(div);
-        
+
         const img = document.createElement('img');
         img.classList.add('preview-img');
         img.setAttribute("src", this.data_obj.preview_img);
         div.appendChild(img);
     }
-    
+
     static createRegTextLine(text, parent) {
         const span_name = document.createElement('span');
         span_name.textContent = text;
@@ -191,28 +191,49 @@ function openProduct() {
     alert("Not now");
 }
 
-/// creating section with artists
-const artists = document.querySelector("#artists-block");
-/// creating section with products
-const products = document.querySelector("#products-block");
-/// creating section with charities
-const charities = document.querySelector("#charities-block");
 
-for(let i = 0; i < 4; ++i){
-    const artist = new Preview(artists_obj[i]);
-    artist.buildProductPreview(artists);
+function loadIndex(){
+  /// creating section with artists
+  const artists = document.querySelector("#artists-block");
+  /// creating section with products
+  const products = document.querySelector("#products-block");
+  /// creating section with charities
+  const charities = document.querySelector("#charities-block");
 
-    const product = new Preview(products_obj[i]);
-    product.buildProductPreview(products);
+  for(let i = 0; i < 4; ++i){
+      const artist = new Preview(artists_obj[i]);
+      artist.buildProductPreview(artists);
 
-    const charity = new Preview(charities_obj[i]);
-    charity.buildProductPreview(charities);
+      const product = new Preview(products_obj[i]);
+      product.buildProductPreview(products);
+
+      const charity = new Preview(charities_obj[i]);
+      charity.buildProductPreview(charities);
+  }
 }
+
+
+function loadProducts(){
+  /// creating section with products
+
+  const products = document.querySelector("#products");
+  for( let j = 0; j < Math.floor(products_obj.length/4); j++){
+    const div = document.createElement('div')
+    div.classList.add('content')
+    div.classList.add('unit')
+    for(let i = 0; i < 4; ++i){
+        const product = new Preview(products_obj[i]);
+        product.buildProductPreview(div);
+        products.appendChild(div)
+    }
+  }
+}
+
 
 // function getItems(filepath, cb){
 //     fs.readFile(filename, 'utf-8', function(error, data){
 //       if(error) console.log('Error:', error)
-  
+
 //       cb(JSON.parse(data))
 //     })
 // }
