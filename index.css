@@ -194,7 +194,7 @@ footer.footer-bottom li {
 
 nav {
     z-index: 98;
-    width: 1200px;
+    /* width: ; */
     margin: auto;
 }
 
@@ -206,6 +206,10 @@ nav {
 .navbar-brand {
   font-family:  Herculanum;
   font-size: 30px;
+}
+
+.cart{
+  font-size: 14px;
 }
 
 #cartIcon {
@@ -245,10 +249,12 @@ ul.dropdown-cart li .item-left span.item-info{
 }
 ul.dropdown-cart li .item-left span.item-info span{
     display:block;
+    font-size: 14px;
 }
 ul.dropdown-cart li .item-right{
     float:right;
 }
 ul.dropdown-cart li .item-right button{
     margin-top:14px;
+    font-size: 14px;
 }
