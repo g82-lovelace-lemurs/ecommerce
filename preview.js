@@ -312,22 +312,8 @@ function loadIndex(){
   }
 }
 
-//
-// function loadProducts(){
-//   /// creating section with products
-//
-//   const products = document.querySelector("#products");
-//   for( let j = 0; j < Math.floor(products_obj.length/4); j++){
-//     const div = document.createElement('div')
-//     div.classList.add('content')
-//     div.classList.add('unit')
-//     for(let i = 0; i < 4; ++i){
-//         const product = new Preview(products_obj[i]);
-//         product.buildProductPreview(div);
-//         products.appendChild(div)
-//     }
-//   }
-// }
+
+
 
 let newUnitDiv = () => {
   let div = document.createElement('div')
@@ -335,38 +321,29 @@ let newUnitDiv = () => {
   div.classList.add('unit')
   return div
 }
-let newProduct = (index)=> {
-  const product = new Preview(products_obj[index]);
+let newProduct = (data,index,div)=> {
+  const product = new Preview(data[index]);
   product.buildProductPreview(div);
+  return product
 }
 
 
 function loadProducts(){
 
   const products = document.querySelector("#products");
-  // let div = document.createElement('div')
-  // div.classList.add('content')
-  // div.classList.add('unit')
+
   let div = newUnitDiv()
-
-  for( let i = 0; i < products_obj.length; i++){
-    if (i % 4 < 3) {
-      const product = new Preview(products_obj[i]);
-      product.buildProductPreview(div);
+  products_obj.forEach((el,idx,arr)=>{
+    if (idx % 4 < 3) {
+      let product = newProduct(arr, idx, div)
     } else {
-
-      const product = new Preview(products_obj[i]);
-      product.buildProductPreview(div);
-
+      let product = newProduct(arr, idx, div)
       products.appendChild(div)
-
-      div = document.createElement('div')
-      div.classList.add('content')
-      div.classList.add('unit')
+      div = newUnitDiv()
     }
+    if (idx % 4) products.appendChild(div)
+  })
 
-    if (i % 4) products.appendChild(div)
-  }
 }
 
 
