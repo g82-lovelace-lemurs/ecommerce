@@ -34,7 +34,7 @@ const charities_obj = [{
 ]
 
 const products_obj = [{
-    id : 1,
+    id : '1',
     name : "K. Malevich",
     product_name : "Black Square",
     type : "product",
@@ -44,7 +44,7 @@ const products_obj = [{
     reviews : ["review-1", "review-2", "review-3"]
     },
     {
-    id : 2,
+    id : '2',
     name : "Jackson Pollock",
     product_name : "N 5",
     type : "product",
@@ -54,7 +54,7 @@ const products_obj = [{
     reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
     },
     {
-    id : 3,
+    id : '3',
     name : "Leonardo da Vinci",
     product_name : "Mona Lisa",
     type : "product",
@@ -64,7 +64,7 @@ const products_obj = [{
     reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
     },
     {
-    id : 4,
+    id : '4',
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -74,7 +74,7 @@ const products_obj = [{
     reviews : ["review-1"]
     },
     {
-    id : 5,
+    id : '5',
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -84,7 +84,7 @@ const products_obj = [{
     reviews : ["review-1"]
     },
     {
-    id : 6,
+    id : '6',
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -94,7 +94,7 @@ const products_obj = [{
     reviews : ["review-1"]
     },
     {
-    id : 7,
+    id : "7",
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -104,7 +104,7 @@ const products_obj = [{
     reviews : ["review-1"]
     },
     {
-    id : 7,
+    id : "7",
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -114,7 +114,7 @@ const products_obj = [{
     reviews : ["review-1"]
     },
     {
-    id : 7,
+    id : "7",
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -124,7 +124,7 @@ const products_obj = [{
     reviews : ["review-1"]
     },
     {
-    id : 7,
+    id : "7",
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -134,7 +134,7 @@ const products_obj = [{
     reviews : ["review-1"]
     },
     {
-    id : 7,
+    id : "7",
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -144,7 +144,7 @@ const products_obj = [{
     reviews : ["review-1"]
     },
     {
-    id : 7,
+    id : "7",
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -154,7 +154,7 @@ const products_obj = [{
     reviews : ["review-1"]
     },
     {
-    id : 7,
+    id : "7",
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -164,7 +164,7 @@ const products_obj = [{
     reviews : ["review-1"]
     },
     {
-    id : 7,
+    id : "7",
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -314,6 +314,7 @@ function loadIndex(){
 
 
 
+// Products Page
 
 let newUnitDiv = () => {
   let div = document.createElement('div')
@@ -321,30 +322,60 @@ let newUnitDiv = () => {
   div.classList.add('unit')
   return div
 }
+
 let newProduct = (data,index,div)=> {
   const product = new Preview(data[index]);
   product.buildProductPreview(div);
   return product
 }
 
-
 function loadProducts(){
 
   const products = document.querySelector("#products");
+  while (products.firstElementChild) products.removeChild(products.firstElementChild)
 
   let div = newUnitDiv()
-  products_obj.forEach((el,idx,arr)=>{
+  products_obj.forEach((el,idx,array)=>{
     if (idx % 4 < 3) {
-      let product = newProduct(arr, idx, div)
+      const product = newProduct(array, idx, div)
     } else {
-      let product = newProduct(arr, idx, div)
+      const product = newProduct(array, idx, div)
       products.appendChild(div)
       div = newUnitDiv()
     }
     if (idx % 4) products.appendChild(div)
   })
-
 }
+
+let sortByKey = (array,key)=>{
+  array.sort((a,b)=>{
+    aa = a[key].toLowerCase()
+    bb = b[key].toLowerCase()
+    return aa < bb ? -1 : 1
+  })
+  loadProducts()
+}
+
+document.addEventListener("click",(event)=>{
+  if (event.target.id === "sort-by-id") sortByKey(products_obj,'id')
+  if (event.target.id === "sort-by-artist") sortByKey(products_obj,'name')
+  if (event.target.id === "sort-by-name") sortByKey(products_obj,'product_name')
+  if (event.target.id === "sort-by-price") sortByKey(products_obj,'price')
+  if (event.target.id === "sort-by-rating") sortByKey(products_obj,'rating')
+  scrollTo(0,0)
+})
+
+
+//
+// id : 1,
+// name : "K. Malevich",
+// product_name : "Black Square",
+// type : "product",
+// preview_img : "src/black_square_malevich.jpg",
+// price : "1",
+// rating : "3.5",
+// reviews : ["review-1", "review-2", "review-3"]
+
 
 
 // function getItems(filepath, cb){
