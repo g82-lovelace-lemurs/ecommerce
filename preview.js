@@ -72,6 +72,106 @@ const products_obj = [{
     price : "15.70",
     rating : "5.0",
     reviews : ["review-1"]
+    },
+    {
+    id : 5,
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : 6,
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : 7,
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : 7,
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : 7,
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : 7,
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : 7,
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : 7,
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : 7,
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : 7,
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
     }
 ]
 
@@ -127,7 +227,7 @@ class Preview {
     buildProductPreview(block) {
         const div = document.createElement('div');
         div.classList.add('product-preview');
-        div.setAttribute("onclick", "openProduct()");
+        // div.setAttribute("onclick", "openProduct()");
         block.appendChild(div);
 
         this.creatPreviewImg(div); //////?????
@@ -212,20 +312,60 @@ function loadIndex(){
   }
 }
 
+//
+// function loadProducts(){
+//   /// creating section with products
+//
+//   const products = document.querySelector("#products");
+//   for( let j = 0; j < Math.floor(products_obj.length/4); j++){
+//     const div = document.createElement('div')
+//     div.classList.add('content')
+//     div.classList.add('unit')
+//     for(let i = 0; i < 4; ++i){
+//         const product = new Preview(products_obj[i]);
+//         product.buildProductPreview(div);
+//         products.appendChild(div)
+//     }
+//   }
+// }
+
+let newUnitDiv = () => {
+  let div = document.createElement('div')
+  div.classList.add('content')
+  div.classList.add('unit')
+  return div
+}
+let newProduct = (index)=> {
+  const product = new Preview(products_obj[index]);
+  product.buildProductPreview(div);
+}
+
 
 function loadProducts(){
-  /// creating section with products
 
   const products = document.querySelector("#products");
-  for( let j = 0; j < Math.floor(products_obj.length/4); j++){
-    const div = document.createElement('div')
-    div.classList.add('content')
-    div.classList.add('unit')
-    for(let i = 0; i < 4; ++i){
-        const product = new Preview(products_obj[i]);
-        product.buildProductPreview(div);
-        products.appendChild(div)
+  // let div = document.createElement('div')
+  // div.classList.add('content')
+  // div.classList.add('unit')
+  let div = newUnitDiv()
+
+  for( let i = 0; i < products_obj.length; i++){
+    if (i % 4 < 3) {
+      const product = new Preview(products_obj[i]);
+      product.buildProductPreview(div);
+    } else {
+
+      const product = new Preview(products_obj[i]);
+      product.buildProductPreview(div);
+
+      products.appendChild(div)
+
+      div = document.createElement('div')
+      div.classList.add('content')
+      div.classList.add('unit')
     }
+
+    if (i % 4) products.appendChild(div)
   }
 }
 

@@ -34,7 +34,7 @@ div.carousel {
 
 div.unit {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -58,6 +58,7 @@ div.product-preview {
   height: 100%;
   width: 24%;
   float: left;
+  margin: 10px;
 }
 
 div.img-box {
