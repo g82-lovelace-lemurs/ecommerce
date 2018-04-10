@@ -10,15 +10,10 @@
   <script defer src="preview.js"></script>
 </head>
 
-<body onload="loadIndex()">
+<body onload="loadProducts()">
 
-  <header>
-    <div class="content"></div>
-  </header>
-
-    <nav class=" navbar  navbar-expand-lg navbar-dark bg-dark sticky-top">
-      <div class="container">
-      <a class="navbar-brand" href="#">Artruist</a>
+    <nav class="nav navbar  navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand" href="index.html">Artruist</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,7 +29,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Designers
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Leonardo</a>
             <a class="dropdown-item" href="#">Raphael</a>
             <a class="dropdown-item" href="#">Donatello</a>
@@ -46,8 +41,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
          <li class="dropdown">
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <img id="cartIcon" src="https://png.icons8.com/android/24/ffffff/shopping-cart.png"><span class="cart caret">7 - Items</span></a>
-           <ul class="dropdown-menu dropdown-menu-right  dropdown-cart" role="menu">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <img id="cartIcon" src="https://png.icons8.com/android/24/ffffff/shopping-cart.png">7 - Items<span class="caret"></span></a>
+           <ul class="dropdown-menu dropdown-cart" role="menu">
                <li>
                    <span class="item">
                      <span class="item-left">
@@ -109,60 +104,21 @@
            </ul>
          </li>
        </ul>
-      </div>
-    </div>
+
+     </div>
     </nav>
 
-  <div class="carousel">
-    <div id="carousel-content" class="content" style="overflow: hidden">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="src/carousel_p1.jpg" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="src/carousel_p2.jpg" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="src/carousel_p3.jpg" alt="Third slide">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-      </div>
-    </div>
+  <section id="products" class="blocks"></section>
+  <div class="sort-menu">
+    <ul>
+      <li id="sort-by-id">Sort by ID</li>
+      <li id="sort-by-artist">Sort by Artist</li>
+      <li id="sort-by-name">Sort by Name</li>
+      <li id="sort-by-price">Sort by Price</li>
+      <li id="sort-by-rating">Sort by Rating</li>
+    </ul>
   </div>
 
-  <section id="artists" class="blocks">
-    <div class="title" id="artists-title">
-      <span style="font-size: 50px">Top Artists</span>
-    </div>
-    <div class="content unit" id="artists-block"></div>
-  </section>
-  <section id="products" class="blocks">
-    <div class="title" id="products-title">
-      <span style="font-size: 50px">Top Products</span>
-    </div>
-    <div class="content unit" id="products-block"></div>
-  </section>
-
-  <section id="charities" class="blocks">
-    <div class="title" id="charities-title">
-      <span style="font-size: 50px">Top Charities</span>
-    </div>
-    <div class="content unit" id="charities-block"></div>
-  </section>
 
   <footer class="footer-top">
     <div class="content">

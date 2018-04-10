@@ -3,6 +3,7 @@
   padding: 0px;
   font-size: 0px;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -16,6 +17,19 @@ header {
   background: url("/src/header-background.jpg");
   background-position: top -70px center;
 }
+
+.sort-menu {
+  position: fixed;
+  top: 130px;
+  left: calc(1220px + (100vw - 1200px)/2);
+}
+
+.sort-menu li {
+  font-size: 14px;
+  cursor: pointer;
+  list-style: none;
+}
+
 
 nav {
   background-color: rgba(0, 0, 0, .8);
@@ -34,7 +48,9 @@ div.carousel {
 
 div.unit {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 div.title {
@@ -56,6 +72,7 @@ div.product-preview {
   height: 100%;
   width: 24%;
   float: left;
+  margin: 10px;
 }
 
 div.img-box {
@@ -198,6 +215,11 @@ nav {
     margin: auto;
 }
 
+nav .nav-container {
+  width: 1200px;
+  margin: auto;
+}
+
 .nav-link {
   font-size: 15px;
   margin-left: 12px;
@@ -206,6 +228,7 @@ nav {
 .navbar-brand {
   font-family:  Herculanum;
   font-size: 30px;
+  display: inline
 }
 
 .cart{
