@@ -211,7 +211,7 @@ footer.footer-bottom li {
 
 nav {
     z-index: 98;
-    width: 100vw;
+    /* width: ; */
     margin: auto;
 }
 
@@ -221,7 +221,7 @@ nav .nav-container {
 }
 
 .nav-link {
-  font-size: 14px;
+  font-size: 15px;
   margin-left: 12px;
 }
 
@@ -231,8 +231,12 @@ nav .nav-container {
   display: inline
 }
 
+.cart{
+  font-size: 14px;
+}
+
 #cartIcon {
-  margin-right: 6px;
+  margin-right: 26px;
 }
 
 ul.dropdown-cart{
@@ -242,6 +246,7 @@ ul.dropdown-cart li .item{
     display:block;
     padding:3px 10px;
     margin: 3px 0;
+    font-size: 16px;
 }
 ul.dropdown-cart li .item:hover{
     background-color:#f3f3f3;
@@ -267,10 +272,12 @@ ul.dropdown-cart li .item-left span.item-info{
 }
 ul.dropdown-cart li .item-left span.item-info span{
     display:block;
+    font-size: 14px;
 }
 ul.dropdown-cart li .item-right{
     float:right;
 }
 ul.dropdown-cart li .item-right button{
     margin-top:14px;
+    font-size: 14px;
 }
