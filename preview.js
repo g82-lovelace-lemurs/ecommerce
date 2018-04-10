@@ -34,7 +34,7 @@ const charities_obj = [{
 ]
 
 const products_obj = [{
-    id : 1,
+    id : '1',
     name : "K. Malevich",
     product_name : "Black Square",
     type : "product",
@@ -44,7 +44,7 @@ const products_obj = [{
     reviews : ["review-1", "review-2", "review-3"]
     },
     {
-    id : 2,
+    id : '2',
     name : "Jackson Pollock",
     product_name : "N 5",
     type : "product",
@@ -54,7 +54,7 @@ const products_obj = [{
     reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
     },
     {
-    id : 3,
+    id : '3',
     name : "Leonardo da Vinci",
     product_name : "Mona Lisa",
     type : "product",
@@ -64,7 +64,107 @@ const products_obj = [{
     reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
     },
     {
-    id : 4,
+    id : '4',
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : '5',
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : '6',
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : "15.70",
+    rating : "5.0",
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
     name : "Andy Warhol",
     product_name : "Red Cat",
     type : "product",
@@ -127,7 +227,7 @@ class Preview {
     buildProductPreview(block) {
         const div = document.createElement('div');
         div.classList.add('product-preview');
-        div.setAttribute("onclick", "openProduct()");
+        // div.setAttribute("onclick", "openProduct()");
         block.appendChild(div);
 
         this.creatPreviewImg(div); //////?????
@@ -213,21 +313,69 @@ function loadIndex(){
 }
 
 
+
+// Products Page
+
+let newUnitDiv = () => {
+  let div = document.createElement('div')
+  div.classList.add('content')
+  div.classList.add('unit')
+  return div
+}
+
+let newProduct = (data,index,div)=> {
+  const product = new Preview(data[index]);
+  product.buildProductPreview(div);
+  return product
+}
+
 function loadProducts(){
-  /// creating section with products
 
   const products = document.querySelector("#products");
-  for( let j = 0; j < Math.floor(products_obj.length/4); j++){
-    const div = document.createElement('div')
-    div.classList.add('content')
-    div.classList.add('unit')
-    for(let i = 0; i < 4; ++i){
-        const product = new Preview(products_obj[i]);
-        product.buildProductPreview(div);
-        products.appendChild(div)
+  while (products.firstElementChild) products.removeChild(products.firstElementChild)
+
+  let div = newUnitDiv()
+  products_obj.forEach((el,idx,array)=>{
+    if (idx % 4 < 3) {
+      const product = newProduct(array, idx, div)
+    } else {
+      const product = newProduct(array, idx, div)
+      products.appendChild(div)
+      div = newUnitDiv()
     }
-  }
+    if (idx % 4) products.appendChild(div)
+  })
 }
+
+let sortByKey = (array,key)=>{
+  array.sort((a,b)=>{
+    aa = a[key].toLowerCase()
+    bb = b[key].toLowerCase()
+    return aa < bb ? -1 : 1
+  })
+  loadProducts()
+}
+
+document.addEventListener("click",(event)=>{
+  if (event.target.id === "sort-by-id") sortByKey(products_obj,'id')
+  if (event.target.id === "sort-by-artist") sortByKey(products_obj,'name')
+  if (event.target.id === "sort-by-name") sortByKey(products_obj,'product_name')
+  if (event.target.id === "sort-by-price") sortByKey(products_obj,'price')
+  if (event.target.id === "sort-by-rating") sortByKey(products_obj,'rating')
+  scrollTo(0,0)
+})
+
+
+//
+// id : 1,
+// name : "K. Malevich",
+// product_name : "Black Square",
+// type : "product",
+// preview_img : "src/black_square_malevich.jpg",
+// price : "1",
+// rating : "3.5",
+// reviews : ["review-1", "review-2", "review-3"]
+
 
 
 // function getItems(filepath, cb){
