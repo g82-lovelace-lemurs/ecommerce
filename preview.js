@@ -331,7 +331,7 @@ let newProduct = (data,index,div)=> {
 
 
 
-function loadProducts(products_obj = products_obj){
+function loadProducts(){
 
   const products = document.querySelector("#products");
   while (products.firstElementChild) products.removeChild(products.firstElementChild)
@@ -356,13 +356,13 @@ let sortByKey = (array,key)=>{
     // if (typeof aa === "Number") return aa - ab
     return aa < bb ? -1 : 1
   })
-  loadProducts(products_obj)
+  loadProducts()
 }
 
 let filterByPrice = (array,price)=>{
   console.log("asdasd");
   let filteredProducts = array.filter(el => el.price <= price )
-  loadProducts(filteredProducts)
+  loadProducts()
 }
 
 document.addEventListener("click",(event)=>{
@@ -372,11 +372,6 @@ document.addEventListener("click",(event)=>{
   if (event.target.id === "sort-by-price") sortByKey(products_obj,'price')
   if (event.target.id === "sort-by-rating") sortByKey(products_obj,'rating')
 
-  if (event.target.id === "filter-10") filterByPrice(products_obj,10)
-  if (event.target.id === "filter-1000") filterByPrice(products_obj,1000)
-  if (event.target.id === "filter-10000") filterByPrice(products_obj,10000)
-  if (event.target.id === "filter-100000") filterByPrice(products_obj,100000)
-  if (event.target.id === "filter-infinity") filterByPrice(products_obj,Infinity)
 
   scrollTo(0,0)
 })
