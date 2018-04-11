@@ -39,8 +39,8 @@ const products_obj = [{
     product_name : "Black Square",
     type : "product",
     preview_img : "src/black_square_malevich.jpg",
-    price : "1",
-    rating : "3.5",
+    price : 1,
+    rating : 3.5,
     reviews : ["review-1", "review-2", "review-3"]
     },
     {
@@ -49,8 +49,8 @@ const products_obj = [{
     product_name : "N 5",
     type : "product",
     preview_img : "src/n_5_jackson_pollock.jpg",
-    price : "2 300 000",
-    rating : "2.0",
+    price : 2300000,
+    rating : 2.0,
     reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
     },
     {
@@ -59,8 +59,8 @@ const products_obj = [{
     product_name : "Mona Lisa",
     type : "product",
     preview_img : "src/Mona-Lisa-product.jpg",
-    price : "99.99",
-    rating : "4.3",
+    price : 99.99,
+    rating : 4.3,
     reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
     },
     {
@@ -69,8 +69,8 @@ const products_obj = [{
     product_name : "Red Cat",
     type : "product",
     preview_img : "src/21599706478_andy_warhol.jpg",
-    price : "15.70",
-    rating : "5.0",
+    price : 15.70,
+    rating : 5.0,
     reviews : ["review-1"]
     },
     {
@@ -79,8 +79,8 @@ const products_obj = [{
     product_name : "Red Cat",
     type : "product",
     preview_img : "src/21599706478_andy_warhol.jpg",
-    price : "15.70",
-    rating : "5.0",
+    price : 15.70,
+    rating : 5.0,
     reviews : ["review-1"]
     },
     {
@@ -89,8 +89,28 @@ const products_obj = [{
     product_name : "Red Cat",
     type : "product",
     preview_img : "src/21599706478_andy_warhol.jpg",
-    price : "15.70",
-    rating : "5.0",
+    price : 15.70,
+    rating : 5.0,
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : 15.70,
+    rating : 5.0,
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : 15.70,
+    rating : 5.0,
     reviews : ["review-1"]
     },
     {
@@ -109,8 +129,28 @@ const products_obj = [{
     product_name : "Red Cat",
     type : "product",
     preview_img : "src/21599706478_andy_warhol.jpg",
-    price : "15.70",
-    rating : "5.0",
+    price : 15.70,
+    rating : 5.0,
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : 15.70,
+    rating : 5.0,
+    reviews : ["review-1"]
+    },
+    {
+    id : "7",
+    name : "Andy Warhol",
+    product_name : "Red Cat",
+    type : "product",
+    preview_img : "src/21599706478_andy_warhol.jpg",
+    price : 15.70,
+    rating : 5.0,
     reviews : ["review-1"]
     },
     {
@@ -129,48 +169,8 @@ const products_obj = [{
     product_name : "Red Cat",
     type : "product",
     preview_img : "src/21599706478_andy_warhol.jpg",
-    price : "15.70",
-    rating : "5.0",
-    reviews : ["review-1"]
-    },
-    {
-    id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : "15.70",
-    rating : "5.0",
-    reviews : ["review-1"]
-    },
-    {
-    id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : "15.70",
-    rating : "5.0",
-    reviews : ["review-1"]
-    },
-    {
-    id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : "15.70",
-    rating : "5.0",
-    reviews : ["review-1"]
-    },
-    {
-    id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : "15.70",
-    rating : "5.0",
+    price : 15.70,
+    rating : 5.0,
     reviews : ["review-1"]
     }
 ]
@@ -329,7 +329,9 @@ let newProduct = (data,index,div)=> {
   return product
 }
 
-function loadProducts(){
+
+
+function loadProducts(products_obj = products_obj){
 
   const products = document.querySelector("#products");
   while (products.firstElementChild) products.removeChild(products.firstElementChild)
@@ -349,11 +351,18 @@ function loadProducts(){
 
 let sortByKey = (array,key)=>{
   array.sort((a,b)=>{
-    aa = a[key].toLowerCase()
-    bb = b[key].toLowerCase()
+    aa = a[key]
+    bb = b[key]
+    // if (typeof aa === "Number") return aa - ab
     return aa < bb ? -1 : 1
   })
-  loadProducts()
+  loadProducts(products_obj)
+}
+
+let filterByPrice = (array,price)=>{
+  console.log("asdasd");
+  let filteredProducts = array.filter(el => el.price <= price )
+  loadProducts(filteredProducts)
 }
 
 document.addEventListener("click",(event)=>{
@@ -362,6 +371,13 @@ document.addEventListener("click",(event)=>{
   if (event.target.id === "sort-by-name") sortByKey(products_obj,'product_name')
   if (event.target.id === "sort-by-price") sortByKey(products_obj,'price')
   if (event.target.id === "sort-by-rating") sortByKey(products_obj,'rating')
+
+  if (event.target.id === "filter-10") filterByPrice(products_obj,10)
+  if (event.target.id === "filter-1000") filterByPrice(products_obj,1000)
+  if (event.target.id === "filter-10000") filterByPrice(products_obj,10000)
+  if (event.target.id === "filter-100000") filterByPrice(products_obj,100000)
+  if (event.target.id === "filter-infinity") filterByPrice(products_obj,Infinity)
+
   scrollTo(0,0)
 })
 

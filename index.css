@@ -29,6 +29,9 @@ header {
   cursor: pointer;
   list-style: none;
 }
+.sort-menu ul {
+  margin-bottom: 20px;
+}
 
 
 nav {
