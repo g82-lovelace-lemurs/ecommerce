@@ -54,6 +54,56 @@ const products_obj = [{
     reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
     },
     {
+    id : '2',
+    name : "Jackson Pollock",
+    product_name : "N 5",
+    type : "product",
+    preview_img : "src/n_5_jackson_pollock.jpg",
+    price : 2300000,
+    rating : 2.0,
+    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
+    },
+    {
+    id : '2',
+    name : "Jackson Pollock",
+    product_name : "N 5",
+    type : "product",
+    preview_img : "src/n_5_jackson_pollock.jpg",
+    price : 2300000,
+    rating : 2.0,
+    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
+    },
+    {
+    id : '2',
+    name : "Jackson Pollock",
+    product_name : "N 5",
+    type : "product",
+    preview_img : "src/n_5_jackson_pollock.jpg",
+    price : 2300000,
+    rating : 2.0,
+    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
+    },
+    {
+    id : '2',
+    name : "Jackson Pollock",
+    product_name : "N 5",
+    type : "product",
+    preview_img : "src/n_5_jackson_pollock.jpg",
+    price : 2300000,
+    rating : 2.0,
+    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
+    },
+    {
+    id : '2',
+    name : "Jackson Pollock",
+    product_name : "N 5",
+    type : "product",
+    preview_img : "src/n_5_jackson_pollock.jpg",
+    price : 2300000,
+    rating : 2.0,
+    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
+    },
+    {
     id : '3',
     name : "Leonardo da Vinci",
     product_name : "Mona Lisa",
@@ -139,7 +189,7 @@ const products_obj = [{
     product_name : "Red Cat",
     type : "product",
     preview_img : "src/21599706478_andy_warhol.jpg",
-    price : 15.70,
+    price : 50.70,
     rating : 5.0,
     reviews : ["review-1"]
     },
@@ -169,7 +219,7 @@ const products_obj = [{
     product_name : "Red Cat",
     type : "product",
     preview_img : "src/21599706478_andy_warhol.jpg",
-    price : 15.70,
+    price : 99.70,
     rating : 5.0,
     reviews : ["review-1"]
     }
@@ -209,7 +259,7 @@ const artists_obj = [{
     }
 ]
 
-let filteredProducts = []
+let filteredProducts = products_obj
 
 
 class Preview {
@@ -335,12 +385,15 @@ let newProduct = (data,index,div)=> {
 
 
 function loadProducts(){
+
+  console.log(filteredProducts);
+
   const select = document.querySelector("select")
   const products = document.querySelector("#products");
   while (products.firstElementChild) products.removeChild(products.firstElementChild)
 
   let div = newUnitDiv()
-  products_obj.forEach((el,idx,array)=>{
+  filteredProducts.forEach((el,idx,array)=>{
     if (idx % 4 < 3) {
       const product = newProduct(array, idx, div)
     } else {
@@ -350,10 +403,6 @@ function loadProducts(){
     }
     if (idx % 4) products.appendChild(div)
   })
-
-  createOptions()
-
-
 }
 
 let sortByKey = (array,key)=>{
@@ -361,10 +410,6 @@ let sortByKey = (array,key)=>{
   loadProducts()
 }
 
-let filterByName = (array,name)=>{
-  let filteredProducts = array.filter(el => el.name === name )
-  loadProducts()
-}
 
 let createOptions = () => {
   const select = document.querySelector("select")
@@ -387,11 +432,11 @@ let createOptions = () => {
 
 
 document.addEventListener("click",(event)=>{
-  if (event.target.id === "sort-by-id") sortByKey(products_obj,'id')
-  if (event.target.id === "sort-by-artist") sortByKey(products_obj,'name')
-  if (event.target.id === "sort-by-name") sortByKey(products_obj,'product_name')
-  if (event.target.id === "sort-by-price") sortByKey(products_obj,'price')
-  if (event.target.id === "sort-by-rating") sortByKey(products_obj,'rating')
+  if (event.target.id === "sort-by-id") sortByKey(filteredProducts,'id')
+  if (event.target.id === "sort-by-artist") sortByKey(filteredProducts,'name')
+  if (event.target.id === "sort-by-name") sortByKey(filteredProducts,'product_name')
+  if (event.target.id === "sort-by-price") sortByKey(filteredProducts,'price')
+  if (event.target.id === "sort-by-rating") sortByKey(filteredProducts,'rating')
 
   scrollTo(0,0)
 })
@@ -400,11 +445,14 @@ const select = document.querySelector("select")
 select.addEventListener("change", ()=>{
   let name = select.children[select.selectedIndex].value
   console.log(name);
+  console.log(filteredProducts);
   if (name !== 'All Artists') {
-    filteredProducts = products_obj.filter(product=>product.name === name)
+    filteredProducts = products_obj.filter(product => product.name === name)
   } else {
     filteredProducts = products_obj
   }
+  console.log(filteredProducts);
+  loadProducts()
 })
 //
 // id : 1,
@@ -415,7 +463,7 @@ select.addEventListener("change", ()=>{
 // price : "1",
 // rating : "3.5",
 // reviews : ["review-1", "review-2", "review-3"]
-
+createOptions()
 
 
 // function getItems(filepath, cb){
