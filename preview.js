@@ -209,6 +209,9 @@ const artists_obj = [{
     }
 ]
 
+let filteredProducts = []
+
+
 class Preview {
     constructor(data_obj, filter) {
         this.data_obj = data_obj;
@@ -354,12 +357,7 @@ function loadProducts(){
 }
 
 let sortByKey = (array,key)=>{
-  array.sort((a,b)=>{
-    aa = a[key]
-    bb = b[key]
-    // if (typeof aa === "Number") return aa - ab
-    return aa < bb ? -1 : 1
-  })
+  array.sort((a,b)=> a[key] < b[key] ? -1 : 1)
   loadProducts()
 }
 
@@ -370,25 +368,22 @@ let filterByName = (array,name)=>{
 
 let createOptions = () => {
   const select = document.querySelector("select")
-  products_obj.map(role => {
+  while(select.firstElementChild.nextElementSibling) select.removeChild(select.lastElementChild)
+
+  const uniqueArtists = products_obj.reduce((acc,product)=>{
+    if (!acc[product.name]) acc[product.name] = product
+    return acc
+  },{})
+  Object.keys(uniqueArtists)
+  .sort((a,b) => a < b ? -1 : 1)
+  .map(name => {
     const option = document.createElement("option")
-    option.value = role.name
-    option.innerText = role.name
+    option.value = name
+    option.innerText = name
     select.appendChild(option)
-    return role
+    return name
   })
 }
-
-//
-// .map(role => {
-//   const option = document.createElement("option")
-//   option.value = role.title
-//   option.innerText = role.title
-//   option.setAttribute("imgSrc",role.img)
-//   select.appendChild(option)
-//   return role
-// })
-
 
 
 document.addEventListener("click",(event)=>{
@@ -404,6 +399,12 @@ document.addEventListener("click",(event)=>{
 const select = document.querySelector("select")
 select.addEventListener("change", ()=>{
   let name = select.children[select.selectedIndex].value
+  console.log(name);
+  if (name !== 'All Artists') {
+    filteredProducts = products_obj.filter(product=>product.name === name)
+  } else {
+    filteredProducts = products_obj
+  }
 })
 //
 // id : 1,
