@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 header {
@@ -44,7 +44,7 @@ nav {
 }
 
 div.carousel {
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .0);
   width: 100%;
   height: 38vh;
 }
@@ -106,7 +106,7 @@ span.normal {
 }
 
 section.blocks {
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .0);
   width: 100%;
   min-height: 50vh;
   margin: 5px 0px;
@@ -123,6 +123,7 @@ footer.footer-top .content {
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
+  background-color: rgba(0,0,0,0);
 }
 
 footer.footer-top .col {
@@ -208,7 +209,7 @@ footer.footer-bottom li {
   width: 1200px;
   max-width: 1200px;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   margin: auto;
 }
 
@@ -283,4 +284,8 @@ ul.dropdown-cart li .item-right{
 ul.dropdown-cart li .item-right button{
     margin-top:14px;
     font-size: 14px;
+}
+
+select {
+  margin-top: 30px;
 }
