@@ -401,7 +401,7 @@ function loadProducts(){
       products.appendChild(div)
       div = newUnitDiv()
     }
-    if (idx % 4) products.appendChild(div)
+    if (idx % 4 || array.length < 4) products.appendChild(div)
   })
 }
 
