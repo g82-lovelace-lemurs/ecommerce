@@ -332,7 +332,7 @@ let newProduct = (data,index,div)=> {
 
 
 function loadProducts(){
-
+  const select = document.querySelector("select")
   const products = document.querySelector("#products");
   while (products.firstElementChild) products.removeChild(products.firstElementChild)
 
@@ -347,6 +347,10 @@ function loadProducts(){
     }
     if (idx % 4) products.appendChild(div)
   })
+
+  createOptions()
+
+
 }
 
 let sortByKey = (array,key)=>{
@@ -359,11 +363,33 @@ let sortByKey = (array,key)=>{
   loadProducts()
 }
 
-let filterByPrice = (array,price)=>{
-  console.log("asdasd");
-  let filteredProducts = array.filter(el => el.price <= price )
+let filterByName = (array,name)=>{
+  let filteredProducts = array.filter(el => el.name === name )
   loadProducts()
 }
+
+let createOptions = () => {
+  const select = document.querySelector("select")
+  products_obj.map(role => {
+    const option = document.createElement("option")
+    option.value = role.name
+    option.innerText = role.name
+    select.appendChild(option)
+    return role
+  })
+}
+
+//
+// .map(role => {
+//   const option = document.createElement("option")
+//   option.value = role.title
+//   option.innerText = role.title
+//   option.setAttribute("imgSrc",role.img)
+//   select.appendChild(option)
+//   return role
+// })
+
+
 
 document.addEventListener("click",(event)=>{
   if (event.target.id === "sort-by-id") sortByKey(products_obj,'id')
@@ -372,11 +398,13 @@ document.addEventListener("click",(event)=>{
   if (event.target.id === "sort-by-price") sortByKey(products_obj,'price')
   if (event.target.id === "sort-by-rating") sortByKey(products_obj,'rating')
 
-
   scrollTo(0,0)
 })
 
-
+const select = document.querySelector("select")
+select.addEventListener("change", ()=>{
+  let name = select.children[select.selectedIndex].value
+})
 //
 // id : 1,
 // name : "K. Malevich",
