@@ -14,8 +14,12 @@ header {
   /* background-color: rgba(0,0,0,.5); */
   width: 100%;
   height: 38vh;
-  background: url("/src/header-background.jpg");
+  background: url("/src/smoke-wallpapers.jpg");
   background-position: top -70px center;
+}
+
+header .content {
+  background-color: rgba(0,0,0,0);
 }
 
 .sort-menu {
@@ -51,16 +55,23 @@ div.carousel {
 
 div.unit {
   display: flex;
-  justify-content: left;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+div.unit-text {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
 div.title {
-  height: 10vh;
+  height: 5vh;
   width: 1200px;
   background-color: white;
   margin: auto;
+  margin-top: 5vh;
 }
 
 section.blocks {
@@ -72,6 +83,7 @@ section.blocks {
 
 div.product-preview {
   background-color: rgb(255,255,255);
+  border-radius: 10px;
   height: 100%;
   width: 24%;
   float: left;
@@ -79,6 +91,7 @@ div.product-preview {
 }
 
 div.img-box {
+  
   overflow: hidden;
 	position: relative;
 	width: 100%;

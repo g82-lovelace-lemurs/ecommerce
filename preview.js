@@ -11,7 +11,7 @@ const charities_obj = [{
     id : 2,
     name : "Charity",
     type : "charity",
-    preview_img : "src/charity_2.png",
+    preview_img : "src/charity_2.jpg",
     rating : "4.9",
     reviews : ["review-1", "review-2", "review-3", "review-4"]
     },
@@ -19,7 +19,7 @@ const charities_obj = [{
     id : 3,
     name : "Charity",
     type : "charity",
-    preview_img : "src/charity_3.jpeg",
+    preview_img : "src/charity_3.jpg",
     rating : "4.3",
     reviews : []
     },
@@ -34,226 +34,206 @@ const charities_obj = [{
 ]
 
 const products_obj = [{
-    id : '1',
-    name : "K. Malevich",
-    product_name : "Black Square",
+    id : "0",
+    name : "Robert Steven",
+    product_name : "Siphonophore",
     type : "product",
-    preview_img : "src/black_square_malevich.jpg",
-    price : 1,
-    rating : 3.5,
-    reviews : ["review-1", "review-2", "review-3"]
-    },
-    {
-    id : '2',
-    name : "Jackson Pollock",
-    product_name : "N 5",
-    type : "product",
-    preview_img : "src/n_5_jackson_pollock.jpg",
-    price : 2300000,
-    rating : 2.0,
-    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
-    },
-    {
-    id : '2',
-    name : "Jackson Pollock",
-    product_name : "N 5",
-    type : "product",
-    preview_img : "src/n_5_jackson_pollock.jpg",
-    price : 2300000,
-    rating : 2.0,
-    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
-    },
-    {
-    id : '2',
-    name : "Jackson Pollock",
-    product_name : "N 5",
-    type : "product",
-    preview_img : "src/n_5_jackson_pollock.jpg",
-    price : 2300000,
-    rating : 2.0,
-    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
-    },
-    {
-    id : '2',
-    name : "Jackson Pollock",
-    product_name : "N 5",
-    type : "product",
-    preview_img : "src/n_5_jackson_pollock.jpg",
-    price : 2300000,
-    rating : 2.0,
-    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
-    },
-    {
-    id : '2',
-    name : "Jackson Pollock",
-    product_name : "N 5",
-    type : "product",
-    preview_img : "src/n_5_jackson_pollock.jpg",
-    price : 2300000,
-    rating : 2.0,
-    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
-    },
-    {
-    id : '2',
-    name : "Jackson Pollock",
-    product_name : "N 5",
-    type : "product",
-    preview_img : "src/n_5_jackson_pollock.jpg",
-    price : 2300000,
-    rating : 2.0,
-    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
-    },
-    {
-    id : '3',
-    name : "Leonardo da Vinci",
-    product_name : "Mona Lisa",
-    type : "product",
-    preview_img : "src/Mona-Lisa-product.jpg",
-    price : 99.99,
-    rating : 4.3,
-    reviews : ["review-1", "review-2", "review-3", "review-1", "review-2", "review-3"]
-    },
-    {
-    id : '4',
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : 15.70,
+    preview_img : "src/a_robert_connett_Siphonophore.jpg",
+    price : 78.70,
     rating : 5.0,
     reviews : ["review-1"]
     },
     {
-    id : '5',
-    name : "Andy Warhol",
-    product_name : "Red Cat",
+    id : "1",
+    name : "Kurun Warun",
+    product_name : "Lines",
     type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : 15.70,
-    rating : 5.0,
-    reviews : ["review-1"]
-    },
-    {
-    id : '6',
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : 15.70,
-    rating : 5.0,
-    reviews : ["review-1"]
-    },
-    {
-    id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : 15.70,
-    rating : 5.0,
-    reviews : ["review-1"]
-    },
-    {
-    id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : 15.70,
-    rating : 5.0,
-    reviews : ["review-1"]
-    },
-    {
-    id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : "15.70",
-    rating : "5.0",
-    reviews : ["review-1"]
-    },
-    {
-    id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : 15.70,
-    rating : 5.0,
-    reviews : ["review-1"]
-    },
-    {
-    id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
+    preview_img : "src/Kurun_Warun_Body_Paint_0.jpg",
     price : 50.70,
-    rating : 5.0,
+    rating : 3.6,
+    reviews : ["review-1"]
+    },
+    {
+    id : "2",
+    name : "Kurun Warun",
+    product_name : "Lines",
+    type : "product",
+    preview_img : "src/Kurun_Warun_Body_Paint.jpg",
+    price : 500,
+    rating : 4.9,
+    reviews : ["review-1"]
+    },
+    {
+    id : "3",
+    name : "Natasha Bowdoin",
+    product_name : "Abstraction N3",
+    type : "product",
+    preview_img : "src/Natasha Bowdoin_3.jpg",
+    price : 280,
+    rating : 4.2,
+    reviews : ["review-1"]
+    },
+    {
+    id : "3",
+    name : "Natasha Bowdoin",
+    product_name : "Abstraction N56",
+    type : "product",
+    preview_img : "src/Natasha Bowdoin_2.jpg",
+    price : 230,
+    rating : 4.1,
+    reviews : ["review-1"]
+    },
+    {
+    id : "4",
+    name : "Natasha Bowdoin",
+    product_name : "Abstraction N98",
+    type : "product",
+    preview_img : "src/Natasha Bowdoin_1.jpg",
+    price : 148,
+    rating : 4.7,
+    reviews : ["review-1"]
+    },
+    {
+    id : "5",
+    name : "Natasha Bowdoin",
+    product_name : "Abstraction",
+    type : "product",
+    preview_img : "src/Natasha Bowdoin_0.jpg",
+    price : 200,
+    rating : 3.9,
+    reviews : ["review-1"]
+    },
+    {
+    id : "6",
+    name : "Robert Steven",
+    product_name : "Sea Creatures",
+    type : "product",
+    preview_img : "src/robert_steven_Sea Creatures.jpg",
+    price : 1570,
+    rating : 4.5,
     reviews : ["review-1"]
     },
     {
     id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
+    name : "Dan Seagrave",
+    product_name : "Tree",
     type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : 15.70,
-    rating : 5.0,
-    reviews : ["review-1"]
-    },
-    {
-    id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
-    price : "15.70",
-    rating : "5.0",
-    reviews : ["review-1"]
-    },
-    {
-    id : "7",
-    name : "Andy Warhol",
-    product_name : "Red Cat",
-    type : "product",
-    preview_img : "src/21599706478_andy_warhol.jpg",
+    preview_img : "src/dan_seagrave_tree.jpg",
     price : 99.70,
-    rating : 5.0,
+    rating : 3.2,
     reviews : ["review-1"]
-    }
+    },
+    {
+    id : "8",
+    name : "Dan Seagrave",
+    product_name : "Tree",
+    type : "product",
+    preview_img : "src/dan_seagrave_decimation.jpg",
+    price : 250,
+    rating : 4.4,
+    reviews : ["review-1"]
+    },
+    {
+    id : "9",
+    name : "Dan Seagrave",
+    product_name : "Decimation 1",
+    type : "product",
+    preview_img : "src/dan_seagrave_decimation_0.jpg",
+    price : 185,
+    rating : 4.9,
+    reviews : ["review-1"]
+    },
+    {
+    id : "10",
+    name : "Dan Seagrave",
+    product_name : "Decimation 2",
+    type : "product",
+    preview_img : "src/Dan Seagrave_1.jpg",
+    price : 98,
+    rating : 4.1,
+    reviews : ["review-1", "review-1", "review-1", "review-1"]
+    },
+    {
+    id : "11",
+    name : "Dan Seagrave",
+    product_name : "Sot",
+    type : "product",
+    preview_img : "src/Dan Seagrave Sot.jpg",
+    price : 108,
+    rating : 4.1,
+    reviews : ["review-1", "review-1", "review-1", "review-1", "review-1", "review-1", "review-1", "review-1"]
+    },
+    {
+    id : "12",
+    name : "Dan Seagrave",
+    product_name : "City",
+    type : "product",
+    preview_img : "src/robert_steven_city.jpg",
+    price : 900,
+    rating : 4.6,
+    reviews : ["review-1", "review-1", "review-1", "review-1", "review-1"]
+    },
+    {
+    id : "13",
+    name : "Dan Seagrave",
+    product_name : "World",
+    type : "product",
+    preview_img : "src/cover9_detail_den_s.jpg",
+    price : 100,
+    rating : 4.9,
+    reviews : ["review-1", "review-1", "review-1"]
+    },
+    {
+    id : "14",
+    name : "Robert Steven",
+    product_name : "Nautical",
+    type : "product",
+    preview_img : "src/nautical-art-fish-art_.jpg",
+    price : 110,
+    rating : 4.0,
+    reviews : ["review-1", "review-1", "review-1", "review-1"]
+    },
+    {
+    id : "15",
+    name : "Robert Steven",
+    product_name : "Sea Creatures",
+    type : "product",
+    preview_img : "src/timeline-photos-robert-richard.jpg",
+    price : 130,
+    rating : 4.4,
+    reviews : ["review-1", "review-1", "review-1", "review-1", "review-1", "review-1", "review-1", "review-1", "review-1", "review-1", "review-1", "review-1"]
+    },
 ]
 
 const artists_obj = [{
     id : 1,
-    name : "Pablo Picasso",
+    name : "Natasha Bowdoin",
     type : "artist",
-    preview_img : "src/pablo-picasso-designer.jpg",
-    rating : "4.5",
+    preview_img : "src/Natasha Bowdoin_artist.jpg",
+    rating : "3.8",
     reviews : ["review-1", "review-2", "review-3"]
     },
     {
     id : 2,
-    name : "Leonardo da Vinci",
+    name : "Robert Steven",
     type : "artist",
-    preview_img : "src/leonardo_da_vinci_designer.jpg",
-    rating : "4.8",
+    preview_img : "src/Robert_Steven_artist.jpg",
+    rating : "4.3",
     reviews : ["review-1", "review-2", "review-3", "review-4"]
     },
     {
-    id : 3,
-    name : "Van Gogh",
+    id : 4,
+    name : "Kurun Warun",
     type : "artist",
-    preview_img : "src/van_gogh_designer.jpg",
-    rating : "4.7",
-    reviews : []
+    preview_img : "src/kurun_warun_artist.jpg",
+    rating : "4.1",
+    reviews : ["review-1", "review-2", "review-3", "review-4", "review-1", "review-2", "review-3", "review-4"]
     },
     {
-    id : 4,
-    name : "Andy Warhol",
+    id : 5,
+    name : "Dan Seagrave",
     type : "artist",
-    preview_img : "src/Andy_Warhol.jpg",
+    preview_img : "src/Dan_Seagrave_artist.jpg",
     rating : "4.7",
     reviews : ["review-1", "review-2", "review-3", "review-4", "review-1", "review-2", "review-3", "review-4"]
     }
@@ -313,7 +293,7 @@ class Preview {
         const div1 = document.createElement('div');
         div1.style.width = "100%";
         div1.style.minHeight = "10px";
-        div1.classList.add('unit');
+        div1.classList.add('unit-text');
         info.appendChild(div1);
 
         Preview.createRegTextLine(this.data_obj.rating, div1);
@@ -386,7 +366,7 @@ let newProduct = (data,index,div)=> {
 
 function loadProducts(){
 
-  console.log(filteredProducts);
+  //console.log(filteredProducts);
 
   const select = document.querySelector("select")
   const products = document.querySelector("#products");
@@ -444,14 +424,14 @@ document.addEventListener("click",(event)=>{
 const select = document.querySelector("select")
 select.addEventListener("change", ()=>{
   let name = select.children[select.selectedIndex].value
-  console.log(name);
-  console.log(filteredProducts);
+  //console.log(name);
+  //console.log(filteredProducts);
   if (name !== 'All Artists') {
     filteredProducts = products_obj.filter(product => product.name === name)
   } else {
     filteredProducts = products_obj
   }
-  console.log(filteredProducts);
+  //console.log(filteredProducts);
   loadProducts()
 })
 //
