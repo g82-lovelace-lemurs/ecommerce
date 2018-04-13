@@ -22,6 +22,16 @@ header .content {
   background-color: rgba(0,0,0,0);
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .sort-menu {
   position: fixed;
   top: 130px;
