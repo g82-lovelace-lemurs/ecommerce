@@ -412,13 +412,26 @@ let createOptions = () => {
 
 
 document.addEventListener("click",(event)=>{
-  if (event.target.id === "sort-by-id") sortByKey(filteredProducts,'id')
-  if (event.target.id === "sort-by-artist") sortByKey(filteredProducts,'name')
-  if (event.target.id === "sort-by-name") sortByKey(filteredProducts,'product_name')
-  if (event.target.id === "sort-by-price") sortByKey(filteredProducts,'price')
-  if (event.target.id === "sort-by-rating") sortByKey(filteredProducts,'rating')
-
-  scrollTo(0,0)
+  if (event.target.id === "sort-by-id") {
+    sortByKey(filteredProducts,'id')
+    scrollTo(0,0)
+  }
+  if (event.target.id === "sort-by-artist") {
+    sortByKey(filteredProducts,'name')
+    scrollTo(0,0)
+  }
+  if (event.target.id === "sort-by-name") {
+    sortByKey(filteredProducts,'product_name')
+    scrollTo(0,0)
+  }
+  if (event.target.id === "sort-by-price") {
+    sortByKey(filteredProducts,'price')
+    scrollTo(0,0)
+  }
+  if (event.target.id === "sort-by-rating") {
+    sortByKey(filteredProducts,'rating')
+    scrollTo(0,0)
+  }
 })
 
 const select = document.querySelector("select")
